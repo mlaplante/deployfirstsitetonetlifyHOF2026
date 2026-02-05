@@ -423,13 +423,10 @@ Help people find your portfolio
   <title>Alex Chen - UX Designer & Developer Portfolio</title>
   
   <!-- Description in search results -->
-  <meta name="description" 
-        content="Creative UX designer from Full Sail University. 
-                 View my web design projects and case studies.">
+  <meta name="description" content="Creative UX designer from Full Sail University. View my web design projects and case studies.">
   
   <!-- Keywords for search engines -->
-  <meta name="keywords" 
-        content="UX designer, web developer, Full Sail, portfolio">
+  <meta name="keywords" content="UX designer, web developer, Full Sail, portfolio">
   
   <!-- Open Graph for social media sharing -->
   <meta property="og:title" content="Alex Chen Portfolio">
