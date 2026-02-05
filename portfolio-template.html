@@ -653,12 +653,32 @@
                 display: flex;
             }
 
+            /* Fix backdrop-filter for mobile browsers that don't support it */
+            nav {
+                backdrop-filter: none;
+                background: rgba(0, 0, 0, 1);
+            }
+
+            /* Simplify gradients for better mobile rendering */
+            #hero {
+                background: var(--primary-color);
+                background: linear-gradient(180deg, var(--dark-bg) 0%, var(--primary-color) 100%);
+            }
+
+            .project-image {
+                background: var(--primary-color);
+            }
+
             .hero-content h1 {
                 font-size: 2.5em;
             }
 
             .hero-content .tagline {
                 font-size: 1.3em;
+            }
+
+            .hero-content p {
+                font-size: 1.1em;
             }
 
             h2 {
@@ -680,6 +700,66 @@
 
             section {
                 padding: 60px 20px;
+            }
+
+            /* Improve form visibility on mobile */
+            .form-group input,
+            .form-group textarea {
+                background: rgba(255, 255, 255, 0.15);
+                border: 2px solid rgba(255, 255, 255, 0.3);
+                color: var(--text-light);
+            }
+
+            .form-group input::placeholder,
+            .form-group textarea::placeholder {
+                color: rgba(255, 255, 255, 0.6);
+            }
+
+            /* Reduce shadow complexity for mobile performance */
+            .project-card {
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            }
+
+            .project-card:hover {
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        /* Extra small devices (phones in portrait mode) */
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.8em;
+                letter-spacing: 1px;
+            }
+
+            .hero-content .tagline {
+                font-size: 1em;
+            }
+
+            .hero-content p {
+                font-size: 0.95em;
+            }
+
+            h2 {
+                font-size: 1.6em;
+                letter-spacing: 1px;
+            }
+
+            .btn {
+                padding: 12px 30px;
+                font-size: 0.9em;
+            }
+
+            section {
+                padding: 40px 15px;
+            }
+
+            nav .container {
+                padding: 0 15px;
+            }
+
+            .logo {
+                font-size: 1.3em;
             }
         }
     </style>
