@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build & Deploy Your First Website - Full Sail Hall of Fame 2026</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/highlight/monokai.css">
+    
+    <style>
+        /* Full Sail Inspired Theme */
+        :root {
+            --fullsail-red: #E31837;
+            --fullsail-black: #000000;
+            --fullsail-gold: #FDB913;
+            --fullsail-gray: #231F20;
+            --fullsail-lightgray: #58595B;
+        }
+
+        .reveal {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, var(--fullsail-black) 0%, var(--fullsail-gray) 100%);
+            color: #ffffff;
+        }
+
+        .reveal h1, .reveal h2, .reveal h3 {
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .reveal h1 {
+            font-size: 3.5em;
+            color: var(--fullsail-red);
+            text-shadow: 3px 3px 0px rgba(253, 185, 19, 0.3);
+            margin-bottom: 0.5em;
+        }
+
+        .reveal h2 {
+            font-size: 2.5em;
+            color: var(--fullsail-gold);
+            margin-bottom: 0.8em;
+        }
+
+        .reveal h3 {
+            font-size: 1.8em;
+            color: #ffffff;
+        }
+
+        .reveal section {
+            text-align: left;
+            padding: 2em;
+        }
+
+        .reveal .center-content {
+            text-align: center;
+        }
+
+        .reveal .slide-number {
+            color: var(--fullsail-gold);
+            background: rgba(0, 0, 0, 0.7);
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+
+        .reveal .controls {
+            color: var(--fullsail-red);
+        }
+
+        .reveal .progress {
+            background: rgba(88, 89, 91, 0.2);
+            color: var(--fullsail-red);
+        }
+
+        /* Custom Styling */
+        .highlight-box {
+            background: rgba(227, 24, 55, 0.2);
+            border-left: 5px solid var(--fullsail-red);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 10px;
+            border: 2px solid var(--fullsail-gold);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            background: rgba(253, 185, 19, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(253, 185, 19, 0.3);
+        }
+
+        .feature-card h3 {
+            color: var(--fullsail-gold);
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+
+        .code-demo {
+            background: #1e1e1e;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px solid var(--fullsail-lightgray);
+        }
+
+        .step-number {
+            display: inline-block;
+            background: var(--fullsail-red);
+            color: white;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        .logo-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--fullsail-red);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 0.8em;
+            letter-spacing: 1px;
+        }
+
+        ul {
+            font-size: 1.2em;
+            line-height: 1.8;
+        }
+
+        li {
+            margin: 15px 0;
+        }
+
+        strong {
+            color: var(--fullsail-gold);
+        }
+
+        a {
+            color: var(--fullsail-gold);
+            text-decoration: none;
+            border-bottom: 2px solid var(--fullsail-gold);
+        }
+
+        a:hover {
+            color: var(--fullsail-red);
+            border-bottom-color: var(--fullsail-red);
+        }
+
+        .fragment {
+            opacity: 0.3;
+        }
+
+        .fragment.visible {
+            opacity: 1;
+        }
+
+        /* Terminal styling */
+        .terminal {
+            background: #000;
+            color: #0f0;
+            font-family: 'Courier New', monospace;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            margin: 20px 0;
+        }
+
+        .terminal::before {
+            content: '$ ';
+            color: var(--fullsail-gold);
+        }
+
+        /* Fix contrast on yellow background sections */
+        section[data-background-color="#FDB913"] strong {
+            color: var(--fullsail-red);
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- Title Slide -->
+            <section data-background-gradient="linear-gradient(135deg, #E31837 0%, #000000 100%)">
+                <div class="center-content">
+                    <h1>Build & Deploy<br>Your First Website</h1>
+                    <h3 style="color: var(--fullsail-gold); margin-top: 1em;">From Template to Live in Minutes</h3>
+                    <p style="margin-top: 2em; font-size: 1.2em;">Full Sail University Hall of Fame 2026</p>
+                    <div style="margin-top: 3em; font-size: 0.9em; opacity: 0.8;">
+                        <p>🚀 Templates • 🎨 Customization • ☁️ Deployment</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- What We'll Cover -->
+            <section>
+                <div class="logo-badge">HALL OF FAME 2026</div>
+                <h2>What We'll Cover Today</h2>
+                <div class="feature-grid">
+                    <div class="feature-card fragment">
+                        <h3>📦 Finding Templates</h3>
+                        <p>Discover the best sources for professional website templates</p>
+                    </div>
+                    <div class="feature-card fragment">
+                        <h3>🔧 Understanding Code</h3>
+                        <p>Learn the basics of HTML, CSS, and JavaScript</p>
+                    </div>
+                    <div class="feature-card fragment">
+                        <h3>✏️ Customization</h3>
+                        <p>Edit and personalize your chosen template</p>
+                    </div>
+                    <div class="feature-card fragment">
+                        <h3>☁️ Netlify Deploy</h3>
+                        <p>Take your site live with Netlify's free hosting</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- What is Netlify -->
+            <section data-background-color="#1a1a1a">
+                <h2>What is Netlify?</h2>
+                <div class="highlight-box">
+                    <p style="font-size: 1.3em;">Netlify is a <strong>cloud platform</strong> that makes deploying websites incredibly simple. No servers to manage, no complex setup—just drag, drop, and deploy.</p>
+                </div>
+                <ul class="fragment">
+                    <li><strong>Free Tier:</strong> Perfect for personal projects and portfolios</li>
+                    <li><strong>Instant Deploy:</strong> Your site goes live in seconds</li>
+                    <li><strong>Continuous Deployment:</strong> Connect to GitHub for automatic updates</li>
+                    <li><strong>Custom Domains:</strong> Use your own domain name</li>
+                    <li><strong>HTTPS Included:</strong> Free SSL certificates automatically</li>
+                </ul>
+            </section>
+
+            <!-- Why Netlify -->
+            <section>
+                <h2>Why Developers Love Netlify</h2>
+                <div style="margin-top: 40px;">
+                    <div class="fragment">
+                        <span class="step-number">1</span>
+                        <strong>Deploy in Seconds:</strong> Drag and drop your files or connect your GitHub repo
+                    </div>
+                    <div class="fragment" style="margin-top: 30px;">
+                        <span class="step-number">2</span>
+                        <strong>Free Hosting:</strong> 100GB bandwidth, automatic HTTPS, and CDN included
+                    </div>
+                    <div class="fragment" style="margin-top: 30px;">
+                        <span class="step-number">3</span>
+                        <strong>Preview Deployments:</strong> Every GitHub push creates a preview URL
+                    </div>
+                    <div class="fragment" style="margin-top: 30px;">
+                        <span class="step-number">4</span>
+                        <strong>Rollback Anytime:</strong> Made a mistake? Rollback to any previous version
+                    </div>
+                </div>
+            </section>
+
+            <!-- Finding Templates - Introduction -->
+            <section data-background-color="#E31837">
+                <div class="center-content">
+                    <h2 style="color: white;">Finding the Perfect Template</h2>
+                    <p style="font-size: 1.4em; margin-top: 1em; color: #FDB913;">Where to look and what to consider</p>
+                </div>
+            </section>
+
+            <!-- Template Sources -->
+            <section>
+                <h2>Top Template Sources</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>HTML5 UP</h3>
+                        <p><a href="https://html5up.net" target="_blank">html5up.net</a></p>
+                        <p>Beautiful, responsive templates. 100% free, built with modern HTML5 and CSS3.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>StartBootstrap</h3>
+                        <p><a href="https://startbootstrap.com" target="_blank">startbootstrap.com</a></p>
+                        <p>Bootstrap-based templates. Great for portfolios and landing pages.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Templated</h3>
+                        <p><a href="https://templated.co" target="_blank">templated.co</a></p>
+                        <p>Simple, clean templates perfect for beginners.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Colorlib</h3>
+                        <p><a href="https://colorlib.com/wp/templates" target="_blank">colorlib.com</a></p>
+                        <p>Wide variety of free, modern templates for any purpose.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- What to Look For -->
+            <section>
+                <h2>Choosing the Right Template</h2>
+                <ul style="font-size: 1.1em;">
+                    <li class="fragment"><strong>Responsive Design:</strong> Must look good on all devices (mobile, tablet, desktop)</li>
+                    <li class="fragment"><strong>Clean Code:</strong> Well-organized HTML/CSS makes customization easier</li>
+                    <li class="fragment"><strong>Modern Aesthetics:</strong> Contemporary design that reflects current trends</li>
+                    <li class="fragment"><strong>Performance:</strong> Fast loading times and optimized assets</li>
+                    <li class="fragment"><strong>Documentation:</strong> Clear instructions for customization</li>
+                    <li class="fragment"><strong>License:</strong> Make sure it's free for commercial use if needed</li>
+                </ul>
+            </section>
+
+            <!-- Understanding Code -->
+            <section data-background-color="#FDB913">
+                <div class="center-content">
+                    <h2 style="color: #000;">Understanding the Code</h2>
+                    <p style="font-size: 1.4em; margin-top: 1em; color: #E31837;">The building blocks of your website</p>
+                </div>
+            </section>
+
+            <!-- HTML Basics -->
+            <section>
+                <h2>HTML: The Structure</h2>
+                <p>HTML (HyperText Markup Language) defines the content and structure of your website.</p>
+                <div class="code-demo">
+                    <pre><code class="language-html" data-trim data-line-numbers>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;My Portfolio&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;John Doe&lt;/h1&gt;
+        &lt;p&gt;Web Developer&lt;/p&gt;
+    &lt;/header&gt;
+    
+    &lt;section id="about"&gt;
+        &lt;h2&gt;About Me&lt;/h2&gt;
+        &lt;p&gt;I create amazing websites...&lt;/p&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <!-- CSS Basics -->
+            <section>
+                <h2>CSS: The Style</h2>
+                <p>CSS (Cascading Style Sheets) controls how your website looks.</p>
+                <div class="code-demo">
+                    <pre><code class="language-css" data-trim data-line-numbers>
+/* Styling the header */
+header {
+    background: linear-gradient(135deg, #E31837, #000);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3em;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #FDB913;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <!-- JavaScript Basics -->
+            <section>
+                <h2>JavaScript: The Behavior</h2>
+                <p>JavaScript adds interactivity and dynamic features to your site.</p>
+                <div class="code-demo">
+                    <pre><code class="language-javascript" data-trim data-line-numbers>
+// Smooth scrolling to sections
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const target = document.querySelector(this.getAttribute('href'));
+        target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    });
+});
+
+// Add animation on scroll
+window.addEventListener('scroll', () => {
+    const elements = document.querySelectorAll('.fade-in');
+    elements.forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight) {
+            el.classList.add('visible');
+        }
+    });
+});
+                    </code></pre>
+                </div>
+            </section>
+
+            <!-- File Structure -->
+            <section>
+                <h2>Typical Template Structure</h2>
+                <div class="terminal">
+                    portfolio-template/
+                    ├── index.html          # Main HTML file
+                    ├── css/
+                    │   ├── style.css       # Your custom styles
+                    │   └── bootstrap.css   # Framework (if used)
+                    ├── js/
+                    │   ├── main.js         # Your JavaScript
+                    │   └── jquery.js       # Libraries
+                    ├── images/
+                    │   ├── profile.jpg
+                    │   └── projects/
+                    └── assets/
+                        └── fonts/
+                </div>
+                <p class="fragment">💡 <strong>Tip:</strong> Keep your files organized for easier updates!</p>
+            </section>
+
+            <!-- Customization Section -->
+            <section data-background-color="#000">
+                <div class="center-content">
+                    <h2>Customizing Your Template</h2>
+                    <p style="font-size: 1.4em; margin-top: 1em; color: #FDB913;">Make it uniquely yours</p>
+                </div>
+            </section>
+
+            <!-- Editable Blocks -->
+            <section>
+                <h2>Common Editable Sections</h2>
+                <div style="margin-top: 30px;">
+                    <div class="highlight-box fragment">
+                        <h3 style="color: #FDB913; margin-top: 0;">1. Header / Hero Section</h3>
+                        <p>Your name, title, tagline, and hero image or background</p>
+                    </div>
+                    <div class="highlight-box fragment">
+                        <h3 style="color: #FDB913; margin-top: 0;">2. About Section</h3>
+                        <p>Your bio, skills, experience, and personal story</p>
+                    </div>
+                    <div class="highlight-box fragment">
+                        <h3 style="color: #FDB913; margin-top: 0;">3. Portfolio / Projects</h3>
+                        <p>Showcase your work with images, descriptions, and links</p>
+                    </div>
+                    <div class="highlight-box fragment">
+                        <h3 style="color: #FDB913; margin-top: 0;">4. Contact Information</h3>
+                        <p>Email, social media links, contact form</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Customization Tips -->
+            <section>
+                <h2>Customization Best Practices</h2>
+                <ul style="font-size: 1.1em;">
+                    <li class="fragment">
+                        <strong>Start with Content:</strong> Write your text first, then integrate it
+                    </li>
+                    <li class="fragment">
+                        <strong>Replace Images:</strong> Use high-quality photos (optimize for web)
+                    </li>
+                    <li class="fragment">
+                        <strong>Update Colors:</strong> Match your personal brand or style
+                    </li>
+                    <li class="fragment">
+                        <strong>Modify Fonts:</strong> Use Google Fonts for unique typography
+                    </li>
+                    <li class="fragment">
+                        <strong>Test Responsiveness:</strong> Check on mobile, tablet, and desktop
+                    </li>
+                    <li class="fragment">
+                        <strong>Keep It Simple:</strong> Less is more—don't overcomplicate
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Color Customization Example -->
+            <section>
+                <h2>Quick Color Customization</h2>
+                <div class="code-demo">
+                    <pre><code class="language-css" data-trim data-line-numbers>
+/* Find this in your CSS file */
+:root {
+    --primary-color: #E31837;    /* Full Sail Red */
+    --secondary-color: #FDB913;  /* Full Sail Gold */
+    --dark-bg: #000000;
+    --light-text: #ffffff;
+}
+
+/* Change to your own brand colors */
+:root {
+    --primary-color: #3498db;    /* Your Blue */
+    --secondary-color: #e74c3c;  /* Your Red */
+    --dark-bg: #2c3e50;          /* Your Dark */
+    --light-text: #ecf0f1;       /* Your Light */
+}
+                    </code></pre>
+                </div>
+                <p class="fragment">🎨 <strong>Pro tip:</strong> Use CSS variables for easy theme changes!</p>
+            </section>
+
+            <!-- Deploying to Netlify -->
+            <section data-background-color="#E31837">
+                <div class="center-content">
+                    <h2 style="color: white;">Deploying to Netlify</h2>
+                    <p style="font-size: 1.4em; margin-top: 1em; color: #FDB913;">Your site, live in minutes</p>
+                </div>
+            </section>
+
+            <!-- Deploy Method 1: Drag & Drop -->
+            <section>
+                <h2>Method 1: Drag & Drop Deploy</h2>
+                <div style="margin-top: 30px;">
+                    <div class="fragment">
+                        <span class="step-number">1</span>
+                        <strong>Sign up:</strong> Create a free account at <a href="https://netlify.com" target="_blank">netlify.com</a>
+                    </div>
+                    <div class="fragment" style="margin-top: 30px;">
+                        <span class="step-number">2</span>
+                        <strong>Prepare files:</strong> Put all your website files in a folder
+                    </div>
+                    <div class="fragment" style="margin-top: 30px;">
+                        <span class="step-number">3</span>
+                        <strong>Drag & Drop:</strong> Drag the entire folder onto Netlify's dashboard
+                    </div>
+                    <div class="fragment" style="margin-top: 30px;">
+                        <span class="step-number">4</span>
+                        <strong>Live!</strong> Your site gets a unique URL instantly
+                    </div>
+                </div>
+                <div class="highlight-box fragment" style="margin-top: 40px;">
+                    <p>⚡ <strong>That's it!</strong> Your site is now live at something like: <code>random-name-123.netlify.app</code></p>
+                </div>
+            </section>
+
+            <!-- Deploy Method 2: GitHub -->
+            <section>
+                <h2>Method 2: GitHub Integration</h2>
+                <div style="margin-top: 30px;">
+                    <div class="fragment">
+                        <span class="step-number">1</span>
+                        <strong>Push to GitHub:</strong> Commit your code to a GitHub repository
+                    </div>
+                    <div class="fragment" style="margin-top: 30px;">
+                        <span class="step-number">2</span>
+                        <strong>Connect Netlify:</strong> Link your GitHub account to Netlify
+                    </div>
+                    <div class="fragment" style="margin-top: 30px;">
+                        <span class="step-number">3</span>
+                        <strong>Select Repo:</strong> Choose your repository from the list
+                    </div>
+                    <div class="fragment" style="margin-top: 30px;">
+                        <span class="step-number">4</span>
+                        <strong>Auto Deploy:</strong> Every push to GitHub auto-deploys to Netlify
+                    </div>
+                </div>
+                <div class="highlight-box fragment" style="margin-top: 40px;">
+                    <p>🔄 <strong>Continuous Deployment:</strong> Make changes, push, and your site updates automatically!</p>
+                </div>
+            </section>
+
+            <!-- Custom Domain -->
+            <section>
+                <h2>Adding a Custom Domain</h2>
+                <p>Want to use your own domain name? It's easy!</p>
+                <div style="margin-top: 30px;">
+                    <div class="fragment">
+                        <span class="step-number">1</span>
+                        <strong>Buy a domain:</strong> From providers like Namecheap, GoDaddy, or Google Domains
+                    </div>
+                    <div class="fragment" style="margin-top: 30px;">
+                        <span class="step-number">2</span>
+                        <strong>Go to Netlify:</strong> Settings → Domain Management → Add custom domain
+                    </div>
+                    <div class="fragment" style="margin-top: 30px;">
+                        <span class="step-number">3</span>
+                        <strong>Update DNS:</strong> Point your domain to Netlify's servers
+                    </div>
+                    <div class="fragment" style="margin-top: 30px;">
+                        <span class="step-number">4</span>
+                        <strong>Enable HTTPS:</strong> Netlify automatically provisions SSL certificate
+                    </div>
+                </div>
+                <p class="fragment" style="margin-top: 40px;">🌐 <strong>Example:</strong> yourname.com instead of yourname.netlify.app</p>
+            </section>
+
+            <!-- Netlify Features -->
+            <section>
+                <h2>Netlify Bonus Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card fragment">
+                        <h3>Forms</h3>
+                        <p>Add working contact forms without backend code</p>
+                    </div>
+                    <div class="feature-card fragment">
+                        <h3>Analytics</h3>
+                        <p>Track visitor traffic without cookies</p>
+                    </div>
+                    <div class="feature-card fragment">
+                        <h3>Functions</h3>
+                        <p>Add serverless functions for dynamic features</p>
+                    </div>
+                    <div class="feature-card fragment">
+                        <h3>Split Testing</h3>
+                        <p>A/B test different versions of your site</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Live Demo Section -->
+            <section data-background-color="#000">
+                <div class="center-content">
+                    <h2>Let's See It in Action!</h2>
+                    <p style="font-size: 1.4em; margin-top: 1em; color: #FDB913;">Live demonstration</p>
+                </div>
+            </section>
+
+            <!-- Best Practices -->
+            <section>
+                <h2>Deployment Best Practices</h2>
+                <ul style="font-size: 1.1em;">
+                    <li class="fragment">
+                        <strong>Test Locally First:</strong> Make sure everything works before deploying
+                    </li>
+                    <li class="fragment">
+                        <strong>Optimize Images:</strong> Compress images to improve load times
+                    </li>
+                    <li class="fragment">
+                        <strong>Check Links:</strong> Ensure all internal and external links work
+                    </li>
+                    <li class="fragment">
+                        <strong>Mobile Test:</strong> View on actual mobile devices, not just browser dev tools
+                    </li>
+                    <li class="fragment">
+                        <strong>Set Redirects:</strong> Configure 404 pages and URL redirects properly
+                    </li>
+                    <li class="fragment">
+                        <strong>Use Version Control:</strong> Always commit to Git before deploying
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Common Issues -->
+            <section>
+                <h2>Troubleshooting Common Issues</h2>
+                <div class="highlight-box fragment">
+                    <h3 style="color: #FDB913; margin-top: 0;">🚫 404 Errors</h3>
+                    <p><strong>Problem:</strong> Links showing "Page Not Found"</p>
+                    <p><strong>Solution:</strong> Check file paths and ensure case-sensitivity matches</p>
+                </div>
+                <div class="highlight-box fragment">
+                    <h3 style="color: #FDB913; margin-top: 0;">🖼️ Broken Images</h3>
+                    <p><strong>Problem:</strong> Images not loading on live site</p>
+                    <p><strong>Solution:</strong> Use relative paths and ensure images are in your project folder</p>
+                </div>
+                <div class="highlight-box fragment">
+                    <h3 style="color: #FDB913; margin-top: 0;">🎨 CSS Not Working</h3>
+                    <p><strong>Problem:</strong> Styling looks different on deployed site</p>
+                    <p><strong>Solution:</strong> Clear browser cache and check CSS file paths</p>
+                </div>
+            </section>
+
+            <!-- Resources -->
+            <section>
+                <h2>Helpful Resources</h2>
+                <div class="feature-grid" style="grid-template-columns: 1fr;">
+                    <div class="feature-card">
+                        <h3>📚 Learning Platforms</h3>
+                        <ul style="font-size: 0.9em;">
+                            <li><a href="https://www.freecodecamp.org" target="_blank">freeCodeCamp</a> - Free coding tutorials</li>
+                            <li><a href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a> - HTML/CSS/JS reference</li>
+                            <li><a href="https://css-tricks.com" target="_blank">CSS-Tricks</a> - CSS tips and techniques</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🛠️ Tools & Assets</h3>
+                        <ul style="font-size: 0.9em;">
+                            <li><a href="https://unsplash.com" target="_blank">Unsplash</a> - Free high-quality images</li>
+                            <li><a href="https://fonts.google.com" target="_blank">Google Fonts</a> - Free web fonts</li>
+                            <li><a href="https://fontawesome.com" target="_blank">Font Awesome</a> - Icon library</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section data-background-color="#FDB913">
+                <div class="center-content">
+                    <h2 style="color: #000;">Next Steps</h2>
+                    <div style="text-align: left; margin-top: 40px; color: #000;">
+                        <div class="fragment" style="margin: 25px 0;">
+                            <span class="step-number" style="background: #E31837;">1</span>
+                            <strong>Choose your template</strong> from the resources shared
+                        </div>
+                        <div class="fragment" style="margin: 25px 0;">
+                            <span class="step-number" style="background: #E31837;">2</span>
+                            <strong>Customize it</strong> with your content and style
+                        </div>
+                        <div class="fragment" style="margin: 25px 0;">
+                            <span class="step-number" style="background: #E31837;">3</span>
+                            <strong>Deploy to Netlify</strong> and share your URL
+                        </div>
+                        <div class="fragment" style="margin: 25px 0;">
+                            <span class="step-number" style="background: #E31837;">4</span>
+                            <strong>Keep learning</strong> and iterating on your site
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Slide -->
+            <section data-background-gradient="linear-gradient(135deg, #000000 0%, #E31837 100%)">
+                <div class="center-content">
+                    <h1 style="font-size: 4em;">Thank You!</h1>
+                    <h3 style="color: var(--fullsail-gold); margin-top: 1em;">Questions?</h3>
+                    <div style="margin-top: 3em;">
+                        <p style="font-size: 1.3em;">Full Sail University Hall of Fame 2026</p>
+                        <p style="margin-top: 1em; font-size: 1.1em; opacity: 0.8;">
+                            🚀 Now go build something amazing!
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/zoom/zoom.js"></script>
+
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: 'c/t',
+            transition: 'slide',
+            backgroundTransition: 'fade',
+            controls: true,
+            progress: true,
+            center: false,
+            width: 1280,
+            height: 720,
+            margin: 0.1,
+            
+            plugins: [ RevealHighlight, RevealNotes, RevealZoom ]
+        });
+    </script>
+</body>
+</html>
