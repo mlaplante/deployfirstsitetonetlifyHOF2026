@@ -237,6 +237,57 @@
                 </div>
             </section>
 
+            <!-- Pre-Workshop Setup -->
+            <section data-background-color="#1a1a1a">
+                <h2>📋 Before We Start</h2>
+                <div style="text-align: left; max-width: 900px; margin: 0 auto;">
+                    <h3 style="color: var(--fullsail-gold); margin-bottom: 1em;">What You'll Need</h3>
+                    <ul style="font-size: 1.1em; line-height: 2;">
+                        <li class="fragment"><strong>Computer:</strong> Windows, Mac, or Linux</li>
+                        <li class="fragment"><strong>Code Editor:</strong> VS Code (free, we'll set this up)</li>
+                        <li class="fragment"><strong>Web Browser:</strong> Chrome, Firefox, Edge, or Safari</li>
+                        <li class="fragment"><strong>Accounts:</strong> GitHub (free) and Netlify (free)</li>
+                        <li class="fragment"><strong>Optional:</strong> Git installed (for GitHub method)</li>
+                    </ul>
+                    <div class="note fragment" style="margin-top: 2em; padding: 1.5em; background: rgba(253, 185, 19, 0.1); border-left: 5px solid var(--fullsail-gold); border-radius: 5px;">
+                        <strong>💡 Pro Tip:</strong> Don't worry if you don't have everything yet! We'll guide you through the setup process.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Development Environment Setup -->
+            <section>
+                <h2>🛠️ Setting Up Your Workspace</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2em; margin-top: 2em;">
+                    <div class="fragment">
+                        <h3 style="color: var(--fullsail-red);">VS Code Editor</h3>
+                        <ul style="text-align: left; font-size: 0.9em;">
+                            <li>Download: <code>code.visualstudio.com</code></li>
+                            <li>Free, lightweight, powerful</li>
+                            <li>Built-in preview features</li>
+                            <li>Extensions marketplace</li>
+                        </ul>
+                        <div style="margin-top: 1em; padding: 1em; background: #000; border-radius: 5px;">
+                            <p style="font-family: 'Courier New', monospace; font-size: 0.8em; color: #4EC9B0;">
+                                File → Open Folder → Start Coding!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="fragment">
+                        <h3 style="color: var(--fullsail-gold);">Useful Extensions</h3>
+                        <ul style="text-align: left; font-size: 0.9em;">
+                            <li><strong>Live Server:</strong> Preview HTML instantly</li>
+                            <li><strong>Prettier:</strong> Auto-format code</li>
+                            <li><strong>HTML CSS Support:</strong> Better autocomplete</li>
+                            <li><strong>Color Highlight:</strong> See colors in code</li>
+                        </ul>
+                        <div class="note" style="margin-top: 1em; padding: 1em; background: rgba(227, 24, 55, 0.1); border-radius: 5px; font-size: 0.8em;">
+                            <strong>Install:</strong> Click Extensions icon (sidebar) → Search → Install
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- What is Netlify -->
             <section data-background-color="#1a1a1a">
                 <h2>What is Netlify?</h2>
@@ -321,6 +372,60 @@
                     <li class="fragment"><strong>Documentation:</strong> Clear instructions for customization</li>
                     <li class="fragment"><strong>License:</strong> Make sure it's free for commercial use if needed</li>
                 </ul>
+            </section>
+
+            <!-- Downloading and File Management -->
+            <section>
+                <h2>📥 Downloading & Organizing Your Template</h2>
+                <div style="text-align: left; max-width: 900px; margin: 0 auto;">
+                    <div style="margin-bottom: 2em;">
+                        <h3 style="color: var(--fullsail-red);">Step-by-Step Download Process</h3>
+                        <ol style="font-size: 1em; line-height: 2;">
+                            <li class="fragment"><strong>Find template</strong> → Click "Download" or "Free Download"</li>
+                            <li class="fragment"><strong>Save ZIP file</strong> → Remember where it downloads!</li>
+                            <li class="fragment"><strong>Extract/Unzip</strong> → Right-click → Extract All (Windows) or double-click (Mac)</li>
+                            <li class="fragment"><strong>Move to workspace</strong> → Create folder like <code>Documents/my-website/</code></li>
+                        </ol>
+                    </div>
+                    <div class="fragment" style="background: #000; padding: 1.5em; border-radius: 10px; margin-top: 1.5em;">
+                        <p style="font-family: 'Courier New', monospace; font-size: 0.85em; line-height: 1.8; margin: 0;">
+                            <span style="color: #569CD6;">my-website/</span><br>
+                            ├── <span style="color: #4EC9B0;">index.html</span> ← Main file<br>
+                            ├── <span style="color: #4EC9B0;">css/</span> ← Stylesheets<br>
+                            ├── <span style="color: #4EC9B0;">js/</span> ← JavaScript files<br>
+                            ├── <span style="color: #4EC9B0;">images/</span> ← Pictures<br>
+                            └── <span style="color: #4EC9B0;">README.md</span> ← Instructions
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Local Testing -->
+            <section>
+                <h2>🧪 Testing Locally Before Deploying</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2em; margin-top: 2em;">
+                    <div>
+                        <h3 style="color: var(--fullsail-gold);">Method 1: Direct Open</h3>
+                        <ul style="text-align: left; font-size: 0.9em; line-height: 1.8;">
+                            <li class="fragment">Find <code>index.html</code></li>
+                            <li class="fragment">Right-click → Open With → Browser</li>
+                            <li class="fragment">View in browser</li>
+                            <li class="fragment"><strong>Limitation:</strong> Some features may not work (forms, JS modules)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--fullsail-red);">Method 2: Live Server</h3>
+                        <ul style="text-align: left; font-size: 0.9em; line-height: 1.8;">
+                            <li class="fragment">Open folder in VS Code</li>
+                            <li class="fragment">Right-click <code>index.html</code></li>
+                            <li class="fragment">Select "Open with Live Server"</li>
+                            <li class="fragment"><strong>✅ Best choice:</strong> Auto-reload on save, full features work</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="note fragment" style="margin-top: 2em; padding: 1.5em; background: rgba(253, 185, 19, 0.1); border-left: 5px solid var(--fullsail-gold); border-radius: 5px; text-align: left;">
+                    <strong>💡 Pro Tip:</strong> Always test locally first! It's faster to catch mistakes before deploying.
+                </div>
             </section>
 
             <!-- Understanding Code -->
@@ -441,6 +546,70 @@ window.addEventListener('scroll', () => {
                 <p class="fragment">💡 <strong>Tip:</strong> Keep your files organized for easier updates!</p>
             </section>
 
+            <!-- Browser DevTools Introduction -->
+            <section>
+                <h2>🔍 Browser DevTools: Your Debugging Friend</h2>
+                <div style="text-align: left; max-width: 1000px; margin: 0 auto;">
+                    <div style="margin-bottom: 2em;">
+                        <h3 style="color: var(--fullsail-gold);">How to Open DevTools</h3>
+                        <ul style="font-size: 0.95em; line-height: 1.8;">
+                            <li class="fragment"><strong>Windows/Linux:</strong> <code>F12</code> or <code>Ctrl + Shift + I</code></li>
+                            <li class="fragment"><strong>Mac:</strong> <code>Cmd + Option + I</code></li>
+                            <li class="fragment"><strong>Right-click:</strong> Any element → "Inspect"</li>
+                        </ul>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; margin-top: 1.5em;">
+                        <div class="fragment" style="background: rgba(227, 24, 55, 0.1); padding: 1.2em; border-radius: 8px;">
+                            <h4 style="color: var(--fullsail-red); margin-top: 0;">🛠️ Key Features</h4>
+                            <ul style="font-size: 0.85em; line-height: 1.6;">
+                                <li><strong>Elements tab:</strong> Inspect HTML/CSS</li>
+                                <li><strong>Console tab:</strong> See errors & test JS</li>
+                                <li><strong>Network tab:</strong> Check file loading</li>
+                                <li><strong>Responsive mode:</strong> Test mobile sizes</li>
+                            </ul>
+                        </div>
+                        <div class="fragment" style="background: rgba(253, 185, 19, 0.1); padding: 1.2em; border-radius: 8px;">
+                            <h4 style="color: var(--fullsail-gold); margin-top: 0;">💡 Common Uses</h4>
+                            <ul style="font-size: 0.85em; line-height: 1.6;">
+                                <li>Find what CSS affects an element</li>
+                                <li>Read error messages in Console</li>
+                                <li>Test color/spacing changes live</li>
+                                <li>Check if images loaded correctly</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Understanding File Paths -->
+            <section>
+                <h2>📂 Understanding File Paths</h2>
+                <div style="text-align: left; max-width: 900px; margin: 0 auto;">
+                    <p style="margin-bottom: 1.5em;">File paths tell the browser where to find images, CSS, and other resources. Getting these right is crucial!</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2em;">
+                        <div class="fragment">
+                            <h3 style="color: var(--fullsail-red);">❌ Absolute Paths (Avoid)</h3>
+                            <pre style="background: #000; padding: 1em; border-radius: 5px; font-size: 0.75em;"><code>C:/Users/YourName/Desktop/site/img.jpg
+
+file:///Users/you/Documents/photo.png</code></pre>
+                            <p style="font-size: 0.85em; margin-top: 0.5em;">Won't work when deployed! Only works on your computer.</p>
+                        </div>
+                        <div class="fragment">
+                            <h3 style="color: #4EC9B0;">✅ Relative Paths (Use These)</h3>
+                            <pre style="background: #000; padding: 1em; border-radius: 5px; font-size: 0.75em;"><code>./images/photo.jpg
+(same folder or subfolder)
+
+../assets/logo.png
+(go up one folder, then down)</code></pre>
+                            <p style="font-size: 0.85em; margin-top: 0.5em;">Works everywhere! Moves with your files.</p>
+                        </div>
+                    </div>
+                    <div class="note fragment" style="margin-top: 2em; padding: 1.5em; background: rgba(253, 185, 19, 0.1); border-left: 5px solid var(--fullsail-gold); border-radius: 5px;">
+                        <strong>💡 Pro Tip:</strong> <code>./</code> means "current folder", <code>../</code> means "parent folder"
+                    </div>
+                </div>
+            </section>
+
             <!-- Customization Section -->
             <section data-background-color="#000">
                 <div class="center-content">
@@ -522,6 +691,60 @@ window.addEventListener('scroll', () => {
                 <p class="fragment">🎨 <strong>Pro tip:</strong> Use CSS variables for easy theme changes!</p>
             </section>
 
+            <!-- Web Accessibility Essentials -->
+            <section>
+                <h2>♿ Making Your Site Accessible to Everyone</h2>
+                <div style="text-align: left; max-width: 950px; margin: 0 auto;">
+                    <p style="margin-bottom: 1.5em;">Accessibility means everyone can use your website, regardless of disabilities. It's the right thing to do AND improves SEO!</p>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.8em; margin-top: 1.5em;">
+                        <div class="fragment" style="background: linear-gradient(135deg, rgba(227, 24, 55, 0.15) 0%, rgba(0, 0, 0, 0.05) 100%); padding: 1.5em; border-radius: 12px;">
+                            <h3 style="color: var(--fullsail-red); font-size: 1.3em; margin-bottom: 0.8em;">✏️ Quick Wins</h3>
+                            <ul style="font-size: 0.88em; line-height: 1.9; margin: 0;">
+                                <li><strong>Alt text for images:</strong> Describe what's in each image</li>
+                                <li><strong>Contrast:</strong> Dark text on light backgrounds (or reverse)</li>
+                                <li><strong>Keyboard navigation:</strong> Ensure all links/buttons are keyboard accessible</li>
+                                <li><strong>Heading hierarchy:</strong> Use h1, h2, h3 in proper order</li>
+                            </ul>
+                        </div>
+                        <div class="fragment" style="background: linear-gradient(135deg, rgba(253, 185, 19, 0.15) 0%, rgba(0, 0, 0, 0.05) 100%); padding: 1.5em; border-radius: 12px;">
+                            <h3 style="color: var(--fullsail-gold); font-size: 1.3em; margin-bottom: 0.8em;">📝 Example: Alt Text</h3>
+                            <pre style="background: #1a1a1a; padding: 1em; border-radius: 8px; font-size: 0.72em; margin: 0; line-height: 1.6;"><code>&lt;!-- Bad: No description --&gt;
+&lt;img src="pic.jpg"&gt;
+
+&lt;!-- Good: Clear description --&gt;
+&lt;img src="pic.jpg" 
+     alt="Student coding on laptop 
+          in Full Sail lab"&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SEO Basics for Visibility -->
+            <section>
+                <h2>🔍 SEO Basics: Get Found on Google</h2>
+                <div style="text-align: left; max-width: 950px; margin: 0 auto;">
+                    <p style="margin-bottom: 1.3em;">Search Engine Optimization helps people discover your portfolio when searching online.</p>
+                    <div class="fragment" style="margin-bottom: 2em;">
+                        <h3 style="color: var(--fullsail-gold); font-size: 1.2em; margin-bottom: 1em;">Essential Meta Tags in &lt;head&gt;</h3>
+                        <pre style="background: #0d0d0d; padding: 1.3em; border-radius: 10px; font-size: 0.75em; line-height: 1.7; border-left: 4px solid var(--fullsail-gold);"><code>&lt;!-- Page title (shows in browser tab & search results) --&gt;
+&lt;title&gt;Jane Smith - Full Stack Developer Portfolio&lt;/title&gt;
+
+&lt;!-- Description (shows in Google search results) --&gt;
+&lt;meta name="description" 
+      content="Creative developer specializing in React and Node.js. 
+               Full Sail University graduate with 5+ projects."&gt;
+
+&lt;!-- Keywords (helps search engines understand your site) --&gt;
+&lt;meta name="keywords" 
+      content="web developer, portfolio, JavaScript, React, Full Sail"&gt;</code></pre>
+                    </div>
+                    <div class="fragment" style="background: rgba(253, 185, 19, 0.12); padding: 1.3em; border-radius: 10px; border-left: 5px solid var(--fullsail-gold);">
+                        <strong style="color: var(--fullsail-gold);">💡 Hall of Fame Tip:</strong> Include your name, skills, and "Full Sail" in your meta tags to help alumni and recruiters find you!
+                    </div>
+                </div>
+            </section>
+
             <!-- Deploying to Netlify -->
             <section data-background-color="#E31837">
                 <div class="center-content">
@@ -553,6 +776,49 @@ window.addEventListener('scroll', () => {
                 </div>
                 <div class="highlight-box fragment" style="margin-top: 40px;">
                     <p>⚡ <strong>That's it!</strong> Your site is now live at something like: <code>random-name-123.netlify.app</code></p>
+                </div>
+            </section>
+
+            <!-- Git and GitHub Fundamentals -->
+            <section>
+                <h2>📚 Git & GitHub Quick Start</h2>
+                <div style="text-align: left; max-width: 950px; margin: 0 auto;">
+                    <div style="margin-bottom: 1.8em;">
+                        <h3 style="color: var(--fullsail-red); font-size: 1.2em;">What's the Difference?</h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; margin-top: 1em;">
+                            <div class="fragment" style="background: rgba(227, 24, 55, 0.12); padding: 1.2em; border-radius: 10px;">
+                                <h4 style="margin-top: 0; color: var(--fullsail-red);">Git = Version Control Tool</h4>
+                                <p style="font-size: 0.85em; margin: 0;">Tracks changes to your files over time. Like "undo" on steroids - save snapshots of your project.</p>
+                            </div>
+                            <div class="fragment" style="background: rgba(253, 185, 19, 0.12); padding: 1.2em; border-radius: 10px;">
+                                <h4 style="margin-top: 0; color: var(--fullsail-gold);">GitHub = Cloud Storage</h4>
+                                <p style="font-size: 0.85em; margin: 0;">Stores your Git repositories online. Share code, collaborate, and backup your work.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fragment">
+                        <h3 style="color: var(--fullsail-gold); font-size: 1.2em; margin-bottom: 1em;">Basic Workflow for This Workshop</h3>
+                        <pre style="background: #0f0f0f; padding: 1.3em; border-radius: 10px; font-size: 0.73em; line-height: 1.8; border-left: 4px solid var(--fullsail-red);"><code># Navigate to your website folder
+cd my-website
+
+# Initialize Git (one time only)
+git init
+
+# Stage all your files
+git add .
+
+# Save snapshot with a message
+git commit -m "Initial version of my portfolio"
+
+# Create main branch
+git branch -M main
+
+# Connect to GitHub repository (create repo first on github.com)
+git remote add origin https://github.com/yourname/portfolio.git
+
+# Upload to GitHub
+git push -u origin main</code></pre>
+                    </div>
                 </div>
             </section>
 
@@ -683,6 +949,76 @@ window.addEventListener('scroll', () => {
                 </div>
             </section>
 
+            <!-- Debugging Errors Like a Pro -->
+            <section>
+                <h2>🐛 Reading & Fixing Error Messages</h2>
+                <div style="text-align: left; max-width: 950px; margin: 0 auto;">
+                    <p style="margin-bottom: 1.5em;">Errors are learning opportunities! Here's how to solve them:</p>
+                    <div class="fragment" style="margin-bottom: 2em;">
+                        <h3 style="color: var(--fullsail-red); font-size: 1.1em;">Common Beginner Mistakes</h3>
+                        <div style="background: #0a0a0a; padding: 1.3em; border-radius: 10px; margin-top: 1em;">
+                            <table style="width: 100%; font-size: 0.8em; line-height: 2;">
+                                <tr style="color: var(--fullsail-gold); border-bottom: 2px solid rgba(253, 185, 19, 0.3);">
+                                    <th style="text-align: left; padding: 0.5em;">❌ Error</th>
+                                    <th style="text-align: left; padding: 0.5em;">✅ Fix</th>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.8em; border-bottom: 1px solid rgba(255,255,255,0.1);"><code>&lt;div&gt; missing &lt;/div&gt;</code></td>
+                                    <td style="padding: 0.8em; border-bottom: 1px solid rgba(255,255,255,0.1);">Always close tags</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.8em; border-bottom: 1px solid rgba(255,255,255,0.1);"><code>color: red</code> (missing semicolon)</td>
+                                    <td style="padding: 0.8em; border-bottom: 1px solid rgba(255,255,255,0.1);">Add <code>;</code> after each CSS rule</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.8em; border-bottom: 1px solid rgba(255,255,255,0.1);">Image path: <code>C:\Desktop\photo.jpg</code></td>
+                                    <td style="padding: 0.8em; border-bottom: 1px solid rgba(255,255,255,0.1);">Use relative: <code>./images/photo.jpg</code></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.8em;"><code>Logo.jpg</code> vs <code>logo.jpg</code></td>
+                                    <td style="padding: 0.8em;">Match exact case (uppercase/lowercase)</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="fragment" style="background: rgba(253, 185, 19, 0.12); padding: 1.3em; border-radius: 10px; border-left: 5px solid var(--fullsail-gold);">
+                        <strong style="color: var(--fullsail-gold);">🔍 Debugging Steps:</strong>
+                        <ol style="margin-top: 0.5em; font-size: 0.9em; line-height: 1.8;">
+                            <li>Open DevTools Console (F12) - read the error message</li>
+                            <li>Google the error message - you're not the first!</li>
+                            <li>Check file paths and spelling</li>
+                            <li>Test one change at a time</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hands-On Activity -->
+            <section data-background-color="#000">
+                <h2 style="color: var(--fullsail-gold);">⚡ Hands-On Challenge Time!</h2>
+                <div style="text-align: left; max-width: 900px; margin: 0 auto; margin-top: 2em;">
+                    <div style="background: rgba(227, 24, 55, 0.2); padding: 2em; border-radius: 15px; border: 3px solid var(--fullsail-red);">
+                        <h3 style="color: var(--fullsail-red); margin-top: 0; font-size: 1.4em;">🎯 Your Mission (Next 15 Minutes)</h3>
+                        <ol style="font-size: 1em; line-height: 2.2; margin: 1.5em 0;">
+                            <li class="fragment">Choose a template from HTML5 UP or StartBootstrap</li>
+                            <li class="fragment">Download and extract the files</li>
+                            <li class="fragment">Open in VS Code (File → Open Folder)</li>
+                            <li class="fragment">Find and customize 3 things:
+                                <ul style="margin-top: 0.5em; font-size: 0.95em;">
+                                    <li>Change your name in the hero section</li>
+                                    <li>Modify one color using CSS</li>
+                                    <li>Update the page title in <code>&lt;head&gt;</code></li>
+                                </ul>
+                            </li>
+                            <li class="fragment">Test locally (open index.html or use Live Server)</li>
+                        </ol>
+                        <div class="fragment" style="background: rgba(253, 185, 19, 0.15); padding: 1.2em; border-radius: 8px; margin-top: 1.5em;">
+                            <strong style="color: var(--fullsail-gold);">🏆 Bonus Challenge:</strong> Add alt text to an image and change the favicon!
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Resources -->
             <section>
                 <h2>Helpful Resources</h2>
@@ -727,6 +1063,67 @@ window.addEventListener('scroll', () => {
                             <span class="step-number" style="background: #E31837;">4</span>
                             <strong>Keep learning</strong> and iterating on your site
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Career Context -->
+            <section>
+                <h2>💼 Why This Matters for Your Career</h2>
+                <div style="text-align: left; max-width: 950px; margin: 0 auto;">
+                    <p style="font-size: 1.1em; margin-bottom: 1.8em;">Your online presence is your 24/7 job interview!</p>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5em;">
+                        <div class="fragment" style="background: linear-gradient(135deg, rgba(227, 24, 55, 0.15), rgba(0,0,0,0.05)); padding: 1.5em; border-radius: 12px; border-left: 4px solid var(--fullsail-red);">
+                            <h3 style="color: var(--fullsail-red); font-size: 1.2em; margin-top: 0;">🎯 For Job Applications</h3>
+                            <ul style="font-size: 0.88em; line-height: 1.9; margin: 0;">
+                                <li>Stand out from other candidates</li>
+                                <li>Show real work, not just resumes</li>
+                                <li>Demonstrate technical skills</li>
+                                <li>Easy to share with recruiters</li>
+                            </ul>
+                        </div>
+                        <div class="fragment" style="background: linear-gradient(135deg, rgba(253, 185, 19, 0.15), rgba(0,0,0,0.05)); padding: 1.5em; border-radius: 12px; border-left: 4px solid var(--fullsail-gold);">
+                            <h3 style="color: var(--fullsail-gold); font-size: 1.2em; margin-top: 0;">🌟 Personal Brand Building</h3>
+                            <ul style="font-size: 0.88em; line-height: 1.9; margin: 0;">
+                                <li>Own your online identity</li>
+                                <li>Showcase Full Sail projects</li>
+                                <li>Network with industry pros</li>
+                                <li>Freelance opportunities</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="fragment" style="margin-top: 2em; background: rgba(78, 201, 176, 0.1); padding: 1.5em; border-radius: 10px; border-left: 5px solid #4EC9B0;">
+                        <strong style="color: #4EC9B0; font-size: 1.1em;">📊 Industry Stat:</strong>
+                        <p style="margin: 0.8em 0 0 0; font-size: 0.95em;">87% of recruiters search for candidates online. Make sure they find YOU with an impressive portfolio!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Workshop Support Resources -->
+            <section data-background-color="#1a1a1a">
+                <h2>🤝 Support & Community</h2>
+                <div style="text-align: left; max-width: 900px; margin: 0 auto;">
+                    <p style="margin-bottom: 1.5em;">You're not alone on this journey! Here's how to get help:</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.8em; margin-top: 1.5em;">
+                        <div class="fragment" style="background: rgba(227, 24, 55, 0.12); padding: 1.4em; border-radius: 10px;">
+                            <h3 style="color: var(--fullsail-red); font-size: 1.1em; margin-top: 0;">💬 Ask Questions</h3>
+                            <ul style="font-size: 0.85em; line-height: 1.9; margin: 0;">
+                                <li><strong>Stack Overflow:</strong> Search or post technical questions</li>
+                                <li><strong>Reddit r/webdev:</strong> Community help & advice</li>
+                                <li><strong>Full Sail Alumni Network:</strong> Connect with graduates</li>
+                            </ul>
+                        </div>
+                        <div class="fragment" style="background: rgba(253, 185, 19, 0.12); padding: 1.4em; border-radius: 10px;">
+                            <h3 style="color: var(--fullsail-gold); font-size: 1.1em; margin-top: 0;">📱 Stay Connected</h3>
+                            <ul style="font-size: 0.85em; line-height: 1.9; margin: 0;">
+                                <li><strong>Share your site:</strong> Tag #FullSailHOF2026</li>
+                                <li><strong>LinkedIn:</strong> Connect with workshop attendees</li>
+                                <li><strong>GitHub:</strong> Follow and star helpful repos</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="fragment" style="margin-top: 2em; background: rgba(78, 201, 176, 0.12); padding: 1.4em; border-radius: 10px; text-align: center;">
+                        <p style="font-size: 1em; margin: 0;"><strong style="color: #4EC9B0;">🎓 Workshop Materials:</strong> All slides and resources available at this GitHub repo</p>
                     </div>
                 </div>
             </section>
