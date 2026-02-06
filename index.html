@@ -195,6 +195,81 @@
         section[data-background-color="#FDB913"] strong {
             color: var(--fullsail-red);
         }
+
+        /* ==================== MOBILE RESPONSIVE DESIGN ==================== */
+        @media (max-width: 768px) {
+            .reveal h1 {
+                font-size: 2.5em;
+                text-shadow: 2px 2px 0px rgba(253, 185, 19, 0.3);
+            }
+
+            .reveal h2 {
+                font-size: 1.8em;
+            }
+
+            .reveal h3 {
+                font-size: 1.4em;
+            }
+
+            .reveal section {
+                padding: 1em;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .feature-card {
+                padding: 20px;
+            }
+
+            ul {
+                font-size: 1em;
+            }
+
+            .step-number {
+                width: 35px;
+                height: 35px;
+                line-height: 35px;
+                font-size: 0.9em;
+            }
+
+            .logo-badge {
+                font-size: 0.7em;
+                padding: 8px 15px;
+            }
+
+            /* Improve color visibility on mobile */
+            .highlight-box {
+                background: rgba(227, 24, 55, 0.3);
+                border-left-width: 4px;
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .reveal h1 {
+                font-size: 1.8em;
+                letter-spacing: 1px;
+            }
+
+            .reveal h2 {
+                font-size: 1.4em;
+            }
+
+            .reveal h3 {
+                font-size: 1.2em;
+            }
+
+            ul {
+                font-size: 0.9em;
+            }
+
+            .reveal section {
+                padding: 0.5em;
+            }
+        }
     </style>
 </head>
 <body>
