@@ -1,0 +1,20 @@
+{
+  "name": "tutorial-video",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "studio": "remotion studio",
+    "render": "remotion render TutorialVideo out/video.mp4",
+    "build": "remotion render TutorialVideo out/video.mp4"
+  },
+  "dependencies": {
+    "@remotion/bundler": "^4.0.435",
+    "@remotion/cli": "^4.0.435",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "remotion": "^4.0.435",
+    "typescript": "^5.9.3"
+  }
+}
